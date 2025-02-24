@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CoursController;
+use App\Http\Controllers\EtudiantController;
 use App\Http\Controllers\FormationController;
 use App\Http\Controllers\NiveauController;
 use App\Http\Controllers\UniteEnsController;
@@ -63,6 +64,24 @@ Route::prefix('/cours')->controller(CoursController::class)->group(function () {
     // Route::patch('/{unite_ens}/editUniteEns','update');
 });
 
+Route::prefix('/etudiants')->controller(EtudiantController::class)->group(function () {
+
+    //route--niveaux
+    Route::get('/newEtudiant', 'create')->name('create');
+
+    Route::post('/newEtudiant', 'store');
+
+    Route::get('/{etudiant}', 'show')->where(
+        [
+            'id' => '[0-9]+'
+        ]
+
+    )->name('etudiant.show');
+
+    Route::get('/{etudiant}/editEtudiant', 'edit')->name('editEtudiant');
+    Route::patch('/{etudiant}/editEtudiant','update');
+});
+
 //php artisan migrate:fresh
 
 
@@ -85,3 +104,8 @@ Route::prefix('/cours')->controller(CoursController::class)->group(function () {
 //php artisan make:model Etudiant -m
 //php artisan make:controller EtudiantController --resource --model=Etudiant
 //php artisan make:request EtudiantFilterRequest
+
+//php artisan make:model Enseignant -m
+//php artisan make:controller EnseignantController --resource --model=Etudiant
+//php artisan make:request EnseignantFilterRequest
+
