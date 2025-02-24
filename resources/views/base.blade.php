@@ -29,7 +29,7 @@
                             Dashboard
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="{{url('/admin')}}">admin</a></li>
+                            <li><a class="dropdown-item" href="{{url('/formations')}}">Dashboard admin</a></li>
                             <li><a class="dropdown-item" href="#">Another action</a></li>
                             <li>
                                 <hr class="dropdown-divider">
@@ -55,7 +55,8 @@
                             Formation
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="{{url('/admin/newFormation')}}">Creer</a></li>
+                            <li><a class="dropdown-item" href="{{url('/formations/newFormation')}}">Creer un formation</a></li>
+                            <li><a class="dropdown-item" href="{{url('/unite_ens/newUniteEns')}}">Creer une unite d'enseignement</a></li>
                             <li><a class="dropdown-item">Liste des formations</a></li>
                             <li>
                                 <hr class="dropdown-divider">

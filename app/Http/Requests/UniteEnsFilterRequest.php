@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class FormationFilterRequest extends FormRequest
+class UniteEnsFilterRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,11 +24,11 @@ class FormationFilterRequest extends FormRequest
         return [
             //
             'code' => ['required','min:8'],
-            'domaine' => ['required'],
-            'mention' => ['required'],
-            'description' => ['required'],
-            'grade' => ['required'],
-            'specialite' =>['required'],
+            'intitule' => ['required'],
+            'credits' => ['required'],
+            'niveau' => ['required'],
+            'semestre' => ['required'],
+            'formation_id' => ['required', 'exists:formations,id']
         ];
     }
 }

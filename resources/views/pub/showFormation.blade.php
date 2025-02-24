@@ -22,6 +22,15 @@
             <p>
                 Description : {{$formation->description}}
             </p>
+
+            <p>
+                @if($formation->unite_ens)
+                @foreach($formation->unite_ens as $unite_ens)
+                    <p>Unite Enseignement : {{$unite_ens->intitule}}</p>
+                @endforeach
+                @endif
+            </p>
+            <!-- @dump($formation->niveaux) -->
         </article>
 
 

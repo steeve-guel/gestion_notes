@@ -45,6 +45,16 @@
         </div>
         <!--third row-->
         <div class="row">
+            <div class="col">
+            <label for="specialite" class="form-label">Specialite</label>
+                <input type="text" class="form-control" id="specialite" name="specialite" value="{{$formation->grade}}" placeholder="MASTER SYSTEMES D'INFORMATION (SI)">
+                @error("specialite")
+                {{$message}}
+                @enderror
+            </div>
+        </div>
+        <!--four row-->
+        <div class="row">
             <!--description input-->
             <div class="col">
                 <label for="description" class="form-label">Description</label>
