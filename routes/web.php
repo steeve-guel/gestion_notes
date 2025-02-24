@@ -1,11 +1,12 @@
 <?php
 
+use App\Http\Controllers\CoursController;
 use App\Http\Controllers\FormationController;
 use App\Http\Controllers\NiveauController;
 use App\Http\Controllers\UniteEnsController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', [FormationController::class,'index']);
+Route::get('/', [FormationController::class, 'index']);
 
 Route::prefix('/formations')->controller(FormationController::class)->group(function () {
     Route::get('/', 'index')->name('admin.dashboardAdmin');
@@ -23,7 +24,7 @@ Route::prefix('/formations')->controller(FormationController::class)->group(func
     )->name('formation.show');
 
     Route::get('/{formation}/editFormation', 'edit')->name('editFormation');
-    Route::patch('/{formation}/editFormation','update');
+    Route::patch('/{formation}/editFormation', 'update');
 });
 
 Route::prefix('/unite_ens')->controller(UniteEnsController::class)->group(function () {
@@ -41,8 +42,29 @@ Route::prefix('/unite_ens')->controller(UniteEnsController::class)->group(functi
     )->name('unite_ens.show');
 
     Route::get('/{unite_ens}/editUniteEns', 'edit')->name('editUniteEns');
-    Route::patch('/{unite_ens}/editUniteEns','update');
+    Route::patch('/{unite_ens}/editUniteEns', 'update');
 });
+
+Route::prefix('/cours')->controller(CoursController::class)->group(function () {
+
+    //route--niveaux
+    Route::get('/newCours', 'create')->name('create');
+
+    Route::post('/newCours', 'store');
+
+    Route::get('/{cours}', 'show')->where(
+        [
+            'id' => '[0-9]+'
+        ]
+
+    )->name('cours.show');
+
+    // Route::get('/{unite_ens}/editUniteEns', 'edit')->name('editUniteEns');
+    // Route::patch('/{unite_ens}/editUniteEns','update');
+});
+
+//php artisan migrate:fresh
+
 
 //php artisan make:model Formation -m
 //php artisan make:controller FormationController --resource --model=Formation
@@ -55,6 +77,11 @@ Route::prefix('/unite_ens')->controller(UniteEnsController::class)->group(functi
 //php artisan make:model UniteEns -m
 //php artisan make:controller UniteEnsController --resource --model=Niveau
 
-//php artisan make:model ElmtConstUniteEns -m
-//php artisan make:controller ElmtConstUniteEnsController --resource --model=ElmtConstUniteEns
+//php artisan make:model Cours -m
+//php artisan make:controller CoursController --resource --model=Cours
+//php artisan make:request CoursFilterRequest
 
+
+//php artisan make:model Etudiant -m
+//php artisan make:controller EtudiantController --resource --model=Etudiant
+//php artisan make:request EtudiantFilterRequest

@@ -3,32 +3,23 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\Model;
 
-class UniteEns extends Model
+class Cours extends Model
 {
     //
+
     use HasFactory;
 
     protected $fillable = [
         'code',
-        'intitule',
-        'credits',
-        'niveau',
-        'semestre',
-        'formation_id'
+        'intitule'
     ];
 
-    public function formations(): BelongsTo
+    public function unite_ens(): BelongsToMany
     {
-        return $this->belongsTo(Formation::class);
-    }
-
-    public function cours(): BelongsToMany
-    {
-        return $this->belongsToMany(Cours::class, 'unite_ens_cours')->withPivot(
+        return $this->belongsToMany(UniteEns::class, 'unite_ens_cours')->withPivot(
             'coeff',
             'coursMagistral',
             'tDiriges',
