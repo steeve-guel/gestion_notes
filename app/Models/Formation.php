@@ -11,9 +11,15 @@ class Formation extends Model
     //
     use HasFactory;
 
-    protected $fillable=['code','domaine','mention','description','grade','specialite'];
+    protected $fillable = ['code', 'domaine', 'mention', 'description', 'grade', 'specialite'];
 
-    public function unite_ens():HasMany{
+    public function unite_ens(): HasMany
+    {
         return $this->hasMany(UniteEns::class);
+    }
+
+    public function enseignants()
+    {
+        return $this->hasMany(Enseignant::class);
     }
 }

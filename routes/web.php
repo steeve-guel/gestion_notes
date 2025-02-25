@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CoursController;
+use App\Http\Controllers\EnseignantController;
 use App\Http\Controllers\EtudiantController;
 use App\Http\Controllers\FormationController;
 use App\Http\Controllers\NiveauController;
@@ -8,6 +9,8 @@ use App\Http\Controllers\UniteEnsController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [FormationController::class, 'index']);
+
+Route::get('/login',function(){});
 
 Route::prefix('/formations')->controller(FormationController::class)->group(function () {
     Route::get('/', 'index')->name('admin.dashboardAdmin');
@@ -79,7 +82,25 @@ Route::prefix('/etudiants')->controller(EtudiantController::class)->group(functi
     )->name('etudiant.show');
 
     Route::get('/{etudiant}/editEtudiant', 'edit')->name('editEtudiant');
-    Route::patch('/{etudiant}/editEtudiant','update');
+    Route::patch('/{etudiant}/editEtudiant', 'update');
+});
+
+Route::prefix('/enseignants')->controller(EnseignantController::class)->group(function () {
+
+    //route--niveaux
+    Route::get('/newEnseignant', 'create')->name('create');
+
+    Route::post('/newEnseignant', 'store');
+
+    Route::get('/{enseignant}', 'show')->where(
+        [
+            'id' => '[0-9]+'
+        ]
+
+    )->name('enseignant.show');
+
+    Route::get('/{enseignant}/editEnseignant', 'edit')->name('editEnseignant');
+    Route::patch('/{enseignant}/editEnseignant', 'update');
 });
 
 //php artisan migrate:fresh
@@ -106,6 +127,5 @@ Route::prefix('/etudiants')->controller(EtudiantController::class)->group(functi
 //php artisan make:request EtudiantFilterRequest
 
 //php artisan make:model Enseignant -m
-//php artisan make:controller EnseignantController --resource --model=Etudiant
+//php artisan make:controller EnseignantController --resource --model=Enseignant
 //php artisan make:request EnseignantFilterRequest
-
