@@ -1,2 +1,143 @@
-
 @import 'bootstrap/dist/css/bootstrap.css';
+
+@import '../css/sidebars.css';
+
+/**login css */
+.std-log {
+    background-color: #F8F8F8;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(#1717172d, #1717173d),
+        url(../../public/images/pexels-olly-3769021.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+.std-contain {
+    background: #f8f8f8e5 !important;
+    width: 40%;
+    border-radius: 14px;
+    padding-inline: 1%;
+    padding-block: 1%;
+}
+
+.std-log-l1 {
+    color: #EC058E;
+    font-size: clamp(1rem, 3vw, 3rem);
+    font-weight: 600;
+}
+
+.std-btn {
+    background: #0070C0;
+    color: #FFFFFF;
+}
+
+.std-btn:hover {
+    background: #0070c0f3;
+    color: #FFFFFF;
+}
+
+/**------------------------------------------------------------------------------------------------------- */
+/**------------------------------------------------------------------------------------------------------- */
+/**------------------------------------------------------------------------------------------------------- */
+/**------------------------------------------------------------------------------------------------------- */
+
+.std-admin-dash-contain {
+    background-color: #F8F8F8;
+    width: 100.8% !important;
+    height: 99.6vh !important;
+    overflow-y: auto !important;
+}
+
+.std-ad-title1 {
+    color: #0070C0;
+    letter-spacing: 2px;
+}
+
+.std-nbr-obj {
+    border: 1px solid #c1c1c1;
+    border-radius: 4px;
+}
+
+.std-obj-title {
+    font-size: clamp(1rem, 3vw, 1.3rem);
+    font-weight: 300;
+    color: #393D3F;
+    letter-spacing: 2px;
+
+}
+
+.std-obj-val {
+    font-size: clamp(1rem, 3vw, 2rem);
+    font-weight: 600;
+    color: #C14953;
+    margin-bottom: 0px;
+}
+
+.std-block{
+    /* background: linear-gradient(#17171793, #17171793),
+        url(../../public/images/pexels-olly-3769021.jpg);
+    background-position: center;
+    background-size: cover; */
+    border: 1px solid #c1c1c1;
+    color: #171717;
+    border-radius: 4px;
+
+}
+
+.std-block h2{
+    font-size: clamp(1rem,3vw,2rem);
+    font-weight: 700 !important;
+    letter-spacing: 1px;
+}
+
+/**form */
+small{
+    font-weight: 300;
+    letter-spacing: 2px;
+}
+
+label{
+    font-weight: 300;
+    letter-spacing: 2px;
+}
+
+.std-form {
+    background-color: #F8F8F8;
+    border: 1px solid #c1c1c1;
+    color: #171717;
+    border-radius: 4px;
+}
+
+
+/**detail classes */
+
+.std-aritcle{
+    border: 1px solid #c1c1c1;
+    border-radius: 4px;
+}
+
+.std-detail p {
+    letter-spacing: 1px;
+}
+
+.std-detail p span{
+    font-weight: 300;
+}
+
+/**table */
+.table > :not(caption) > * > *{
+    background-color: #F8F8F8 !important;
+    letter-spacing: 1px;
+}
+
+th {
+    color: #EC058E !important;
+}
+
+/**formations */
+
+.std-formation-content h4{
+    letter-spacing: 1px;
+    font-weight: 300;
+}

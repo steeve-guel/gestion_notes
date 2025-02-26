@@ -90,7 +90,7 @@
         </div>
 
         <!--submit button-->
-        <button class="btn btn-primary" class="btn">
+        <button class="btn btn-primary w-100 mt-3">
             @if($cours->id)
             Modifier
             @else

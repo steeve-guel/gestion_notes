@@ -1,8 +1,6 @@
 <!-- Afficher les formations -->
 @if($formations->count() > 0)
-<ul>
-    @foreach($formations as $formation)
-    <table class="table">
+    <table class="table std-tab">
         <thead>
             <tr>
                 <th scope="col">Code</th>
@@ -12,7 +10,9 @@
                 <th scope="col">Action</th>
             </tr>
         </thead>
+
         <tbody>
+            @foreach($formations as $formation)
             <tr>
                 <th scope="row">{{$formation->code}}</th>
                 <td>{{$formation->domaine}}</td>
@@ -23,14 +23,12 @@
                     <a href="{{route('editFormation',['formation' => $formation])}}">éditer</a>
                 </td>
             </tr>
-
+            @endforeach
         </tbody>
     </table>
-    @endforeach
-</ul>
+{{ $formations->links() }}
 @else
 <p>Aucun post disponible.</p>
 @endif
 
 <!-- Afficher les liens de pagination -->
-{{ $formations->links() }}

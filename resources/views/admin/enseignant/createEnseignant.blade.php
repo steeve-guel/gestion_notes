@@ -1,4 +1,3 @@
-
 @extends('base')
 
 @section('title','Création d\'un enseignant')
@@ -7,9 +6,17 @@
 
 <div class="  py-4 px-3 mx-auto">
     <div class="jumbotron">
-        <h3>Creation d'un enseignant</h3>
-        <!--formulaire de creation d'un formation-->
-        @include('admin.enseignant.formEnseignant')
+        <div class="std-block py-3 mb-2 text-center">
+            <h2>Creation d'un enseignant</h2>
+            <small>Espace de création d'un nouvel enseignant</small>
+        </div>
+
+        <!--formulaire de creation d'un enseignant-->
+        <section class="container std-form py-4">
+            @include('admin.enseignant.formEnseignant')
+        </section>
+
+
     </div>
 </div>
 

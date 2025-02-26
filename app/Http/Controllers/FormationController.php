@@ -3,7 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\FormationFilterRequest;
+use App\Models\Cours;
+use App\Models\Enseignant;
+use App\Models\Etudiant;
 use App\Models\Formation;
+use App\Models\UniteEns;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Pagination\Paginator;
@@ -17,9 +21,18 @@ class FormationController extends Controller
     public function index():View
     {
         //
-        $formations = Formation::paginate(1);
+        $formations = Formation::paginate(5);
+        $etudiants = Etudiant::paginate(5);
+        $enseignants = Enseignant::paginate(5);
+        $unite_ens = UniteEns::paginate(5);
+        $cours = Cours::paginate(5);
 
-        return view('admin.dashboardAdmin',compact('formations'));
+
+        return view('admin.dashboardAdmin',compact(
+            'formations','etudiants',
+            'enseignants','unite_ens',
+            'cours'
+        ));
     }
 
     /**
@@ -47,7 +60,7 @@ class FormationController extends Controller
     {
         //
         $formation = Formation::create($request->Validated());
-        return redirect()->route('formation.show',['formation'=> $formation->id])->with('success',"La formation a ete bien crée.");
+        return redirect()->route('formation.show',['formation'=> $formation->id])->with('success',"La formation a ete bien créée.");
     }
 
     /**

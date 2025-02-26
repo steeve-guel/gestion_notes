@@ -8,7 +8,7 @@
             <!--code input-->
             <div class="col">
                 <label for="code" class="form-label">Code</label>
-                <input type="text" class="form-control" id="code" name="code" value="{{$enseignant->code}}" placeholder="">
+                <input type="text" class="form-control" id="code" name="code" value="{{$enseignant->code}}" placeholder="EN111111">
                 @error("code")
                 {{$message}}
                 @enderror
@@ -34,8 +34,8 @@
             <!--nom input-->
             <div class="col">
                 <label for="nom" class="form-label">Nom</label>
-                <input type="text" class="form-control" id="nom" name="nom" value="{{$enseignant->nom}}" placeholder="">
-                @error("mention")
+                <input type="text" class="form-control" id="nom" name="nom" value="{{$enseignant->nom}}" placeholder="Traore">
+                @error("nom")
                 {{$message}}
                 @enderror
             </div>
@@ -43,7 +43,7 @@
             <!--prenom input-->
             <div class="col">
                 <label for="prenom" class="form-label">Prenom</label>
-                <input type="text" class="form-control" id="prenom" name="prenom" value="{{$enseignant->prenom}}" placeholder="">
+                <input type="text" class="form-control" id="prenom" name="prenom" value="{{$enseignant->prenom}}" placeholder="Pierre">
                 @error("prenom")
                 {{$message}}
                 @enderror
@@ -54,7 +54,7 @@
             <!--lieuNaiss input-->
             <div class="col">
                 <label for="email" class="form-label">Email</label>
-                <input type="email" class="form-control" id="email" name="email" value="{{$enseignant->email}}" placeholder="">
+                <input type="email" class="form-control" id="email" name="email" value="{{$enseignant->email}}" placeholder="exemple@gmail.com">
                 @error("email")
                 {{$message}}
                 @enderror
@@ -63,28 +63,36 @@
             <!--telephone input-->
             <div class="col">
                 <label for="telephone" class="form-label">Telephone</label>
-                <input type="text" class="form-control" id="telephone" name="telephone" value="{{$enseignant->telephone}}" required>
-                @error("mention")
-                {{$message}}
-                @enderror
-            </div>
-
-            <div class="col">
-                <label for="grade" class="form-label">Grade</label>
-                <input type="text" class="form-control" id="grade" name="grade" value="{{$enseignant->grade}}" required>
-                @error("mention")
+                <input type="text" class="form-control" id="telephone" name="telephone" value="{{$enseignant->telephone}}" placeholder="+226 XX-XX-XX-XX" required>
+                @error("telephone")
                 {{$message}}
                 @enderror
             </div>
         </div>
 
-        <!--submit button-->
-        <button class="btn btn-primary" class="btn">
-            @if($enseignant->id)
-            Modifier
-            @else
-            Creer
-            @endif
-        </button>
+        <div class="row">
+            <div class="col">
+                <label for="grade" class="form-label">Grade</label>
+                <input type="text" class="form-control" id="grade" name="grade" value="{{$enseignant->grade}}" placeholder="Maitre Assistant" required>
+                @error("grade")
+                {{$message}}
+                @enderror
+            </div>
+        </div>
+
+        <div class="row mt-3">
+            <div class="col">
+                <!--submit button-->
+                <button class="btn btn-primary w-100">
+                    @if($enseignant->id)
+                    Modifier
+                    @else
+                    Creer
+                    @endif
+                </button>
+            </div>
+        </div>
+
+
     </div>
 </form>

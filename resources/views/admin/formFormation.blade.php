@@ -46,7 +46,7 @@
         <!--third row-->
         <div class="row">
             <div class="col">
-            <label for="specialite" class="form-label">Specialite</label>
+                <label for="specialite" class="form-label">Specialite</label>
                 <input type="text" class="form-control" id="specialite" name="specialite" value="{{$formation->grade}}" placeholder="MASTER SYSTEMES D'INFORMATION (SI)">
                 @error("specialite")
                 {{$message}}
@@ -65,13 +65,18 @@
             </div>
         </div>
 
-        <!--submit button-->
-        <button class="btn btn-primary" class="btn">
-            @if($formation->id)
-            Modifier
-            @else
-            Creer
-            @endif
-        </button>
+        <div class="row mt-3">
+            <div class="col">
+                <!--submit button-->
+                <button class="btn btn-primary w-100">
+                    @if($formation->id)
+                    Modifier
+                    @else
+                    Creer
+                    @endif
+                </button>
+            </div>
+        </div>
+
     </div>
 </form>

@@ -8,8 +8,8 @@
             <!--code input-->
             <div class="col">
                 <label for="ine" class="form-label">INE</label>
-                <input type="text" class="form-control" id="ine" name="ine" value="{{$etudiant->ine}}" placeholder="">
-                @error("code")
+                <input type="text" class="form-control" id="ine" name="ine" value="{{$etudiant->ine}}" placeholder="NE1010101010">
+                @error("ine")
                 {{$message}}
                 @enderror
             </div>
@@ -34,8 +34,8 @@
             <!--nom input-->
             <div class="col">
                 <label for="nom" class="form-label">Nom</label>
-                <input type="text" class="form-control" id="nom" name="nom" value="{{$etudiant->nom}}" placeholder="">
-                @error("mention")
+                <input type="text" class="form-control" id="nom" name="nom" value="{{$etudiant->nom}}" placeholder="Traore">
+                @error("nom")
                 {{$message}}
                 @enderror
             </div>
@@ -43,7 +43,7 @@
             <!--prenom input-->
             <div class="col">
                 <label for="prenom" class="form-label">Prenom</label>
-                <input type="text" class="form-control" id="prenom" name="prenom" value="{{$etudiant->prenom}}" placeholder="">
+                <input type="text" class="form-control" id="prenom" name="prenom" value="{{$etudiant->prenom}}" placeholder="Pierre">
                 @error("prenom")
                 {{$message}}
                 @enderror
@@ -54,8 +54,8 @@
             <!--lieuNaiss input-->
             <div class="col">
                 <label for="lieuNaiss" class="form-label">Lieu de naissance</label>
-                <input type="text" class="form-control" id="lieuNaiss" name="lieuNaiss" value="{{$etudiant->lieuNaiss}}" placeholder="">
-                @error("mention")
+                <input type="text" class="form-control" id="lieuNaiss" name="lieuNaiss" value="{{$etudiant->lieuNaiss}}" placeholder="Bobo-Dioulasso">
+                @error("lieuNaiss")
                 {{$message}}
                 @enderror
             </div>
@@ -64,14 +64,14 @@
             <div class="col">
                 <label for="dateNaiss" class="form-label">Date de naissance</label>
                 <input type="date" class="form-control" id="dateNaiss" name="dateNaiss" value="{{$etudiant->dateNaiss}}" required>
-                @error("mention")
+                @error("dateNaiss")
                 {{$message}}
                 @enderror
             </div>
         </div>
 
         <!--submit button-->
-        <button class="btn btn-primary" class="btn">
+        <button class="btn btn-primary w-100 mt-3">
             @if($etudiant->id)
             Modifier
             @else
