@@ -60,8 +60,10 @@
                         </button>
                         <div class="collapse" id="unite_ens-collapse">
                             <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                                <li><a href="{{url('/unite_ens/')}}" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Liste des UE</a></li>
                                 <li><a href="{{url('/unite_ens/newUniteEns')}}" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Nouvelle UE</a></li>
                                 <li><a href="{{url('/cours/newCours')}}" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Nouveau ECUE</a></li>
+
                             </ul>
                         </div>
                     </li>

@@ -45,10 +45,6 @@
                     @endif
                 </p> -->
             </div>
-
-
-
-            <!-- @dump($formation->niveaux) -->
         </article>
 
 

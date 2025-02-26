@@ -8,7 +8,7 @@
             <!--code input-->
             <div class="col">
                 <label for="code" class="form-label">Code</label>
-                <input type="text" class="form-control" id="code" name="code" value="{{$unite_ens->code}}" placeholder="FN1111">
+                <input type="text" class="form-control" id="code" name="code" value="{{$unite_ens->code}}" placeholder="INF4611">
                 @error("code")
                 {{$message}}
                 @enderror
@@ -34,7 +34,7 @@
             <!--intitule input-->
             <div class="col">
                 <label for="intitule" class="form-label">Intitule</label>
-                <input type="text" class="form-control" id="intitule" name="intitule" value="{{$unite_ens->intitule}}" placeholder="Informatique">
+                <input type="text" class="form-control" id="intitule" name="intitule" value="{{$unite_ens->intitule}}" placeholder="Interopérabilité et coopération">
                 @error("mention")
                 {{$message}}
                 @enderror
@@ -43,7 +43,7 @@
             <!--credits input-->
             <div class="col">
                 <label for="credits" class="form-label">Credits</label>
-                <input type="number" class="form-control" id="credits" name="credits" value="{{$unite_ens->credits}}" placeholder="MASTER SYSTEMES D'INFORMATION (SI)">
+                <input type="number" class="form-control" id="credits" name="credits" value="{{$unite_ens->credits}}" placeholder="">
                 @error("credits")
                 {{$message}}
                 @enderror
@@ -56,11 +56,11 @@
                 <label for="niveau" class="form-label">Niveau</label>
                 <select class="form-select" id="niveau" name="niveau" aria-label="Default select example">
                     <option selected disabled>Open this select menu</option>
-                    <option value="Licence 1">Licence 1</option>
-                    <option value="Licence 2">Licence 2</option>
-                    <option value="Licence 3">Licence 3</option>
-                    <option value="Master 1">Master 1</option>
-                    <option value="Master 2">Master 2</option>
+                    <option value="Licence 1" @selected(old('niveau',$unite_ens->niveau)=='Licence 1')>Licence 1</option>
+                    <option value="Licence 2" @selected(old('niveau',$unite_ens->niveau)=='Licence 2')>Licence 2</option>
+                    <option value="Licence 3" @selected(old('niveau',$unite_ens->niveau)=='Licence 3')>Licence 3</option>
+                    <option value="Master 1" @selected(old('niveau',$unite_ens->niveau)=='Master 1')>Master 1</option>
+                    <option value="Master 2" @selected(old('niveau',$unite_ens->niveau)=='Master 2')>Master 2</option>
                 </select>
                 @error("niveau")
                 {{$message}}
@@ -72,12 +72,12 @@
                 <label for="semestre" class="form-label">Semestre</label>
                 <select class="form-select" id="semestre" name="semestre" aria-label="Default select example">
                     <option selected disabled>Open this select menu</option>
-                    <option value="Semestre 1">Semestre 1</option>
-                    <option value="Semestre 2">Semestre 2</option>
-                    <option value="Semestre 3">Semestre 3</option>
-                    <option value="Semestre 4">Semestre 4</option>
-                    <option value="Semestre 5">Semestre 5</option>
-                    <option value="Semestre 6">Semestre 6</option>
+                    <option value="Semestre 1" @selected(old('semestre',$unite_ens->semestre)=='Semestre 1')>Semestre 1</option>
+                    <option value="Semestre 2" @selected(old('semestre',$unite_ens->semestre)=='Semestre 2')>Semestre 2</option>
+                    <option value="Semestre 3" @selected(old('semestre',$unite_ens->semestre)=='Semestre 3')>Semestre 3</option>
+                    <option value="Semestre 4" @selected(old('semestre',$unite_ens->semestre)=='Semestre 4')>Semestre 4</option>
+                    <option value="Semestre 5" @selected(old('semestre',$unite_ens->semestre)=='Semestre 5')>Semestre 5</option>
+                    <option value="Semestre 6" @selected(old('semestre',$unite_ens->semestre)=='Semestre 6')>Semestre 6</option>
                 </select>
                 @error("semestre")
                 {{$message}}

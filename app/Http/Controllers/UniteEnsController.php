@@ -12,9 +12,31 @@ class UniteEnsController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
         //
+        $formations = Formation::all();
+        $formationId = $request->input('formation_id');
+        $unites = collect();
+
+        if ($formationId) {
+            // Récupérer les unités d'enseignement de la formation sélectionnée
+            $unites = UniteEns::where('formation_id', $formationId)
+                ->orderBy('niveau')
+                ->orderBy('semestre')
+                ->orderBy('code')
+                ->paginate(5);
+            // $unites = UniteEns::where('formation_id', $formationId)->get()->paginate(5);
+        }
+
+
+        // $unite_ens = UniteEns::paginate(5);
+
+        return view('admin.uniteEns.uniteEns', compact(
+            'formations',
+            'formationId',
+            'unites'
+        ));
     }
 
     /**

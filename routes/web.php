@@ -35,6 +35,8 @@ Route::prefix('/formations')->controller(FormationController::class)->group(func
 
 Route::prefix('/unite_ens')->controller(UniteEnsController::class)->group(function () {
 
+    Route::get('/', 'index')->name('admin.uniteEns.uniteEns');
+
     //route--niveaux
     Route::get('/newUniteEns', 'create')->name('create');
 

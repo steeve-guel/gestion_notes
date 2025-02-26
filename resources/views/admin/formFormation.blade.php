@@ -47,7 +47,7 @@
         <div class="row">
             <div class="col">
                 <label for="specialite" class="form-label">Specialite</label>
-                <input type="text" class="form-control" id="specialite" name="specialite" value="{{$formation->grade}}" placeholder="MASTER SYSTEMES D'INFORMATION (SI)">
+                <input type="text" class="form-control" id="specialite" name="specialite" value="{{$formation->grade}}" placeholder="Système d'aide a la decision">
                 @error("specialite")
                 {{$message}}
                 @enderror

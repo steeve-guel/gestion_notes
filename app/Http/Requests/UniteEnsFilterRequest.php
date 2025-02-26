@@ -23,7 +23,7 @@ class UniteEnsFilterRequest extends FormRequest
     {
         return [
             //
-            'code' => ['required','min:8'],
+            'code' => ['required','min:4'],
             'intitule' => ['required'],
             'credits' => ['required'],
             'niveau' => ['required'],

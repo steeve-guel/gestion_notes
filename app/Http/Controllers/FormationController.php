@@ -42,11 +42,11 @@ class FormationController extends Controller
     {
         //
         $formation = new Formation();
-        $formation->code = 'FN111111';
-        $formation->domaine = 'Sciences et technologies';
-        $formation->mention = 'Informatique';
-        $formation->description = "L'une des meilleurs formations informatiques";
-        $formation->grade = "MASTER SYSTEMES D'INFORMATION (SI)";
+        // $formation->code = 'FN111111';
+        // $formation->domaine = 'Sciences et technologies';
+        // $formation->mention = 'Informatique';
+        // $formation->description = "L'une des meilleurs formations informatiques";
+        // $formation->grade = "MASTER SYSTEMES D'INFORMATION (SI)";
 
         return view('admin.createFormation',[
             'formation' => $formation
