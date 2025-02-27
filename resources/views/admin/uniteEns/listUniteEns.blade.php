@@ -40,7 +40,7 @@
             <td>{{$unite->semestre}}</td>
             <td>
                 <a href="{{route('unite_ens.show',['unite_ens' => $unite])}}">voir</a>
-                <a href="{{route('editUniteEns',['unite_ens' => $unite])}}"">éditer</a>
+                <a href="{{route('editUniteEns',['unite_ens' => $unite])}}">éditer</a>
             </td>
         </tr>
         @endforeach

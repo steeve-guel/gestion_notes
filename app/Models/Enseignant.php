@@ -17,7 +17,6 @@ class Enseignant extends Model
         'email',
         'telephone',
         'grade'
-
     ];
 
     public function formations(){

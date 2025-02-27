@@ -2,6 +2,7 @@
     @csrf
     @method($enseignant->id? "PATCH":"POST")
 
+    @dump($enseignant->formations()->get())
     <div class="container">
         <!--first row-->
         <div class="row">
@@ -14,15 +15,20 @@
                 @enderror
             </div>
 
+            @php
+            $formationsId = $enseignant->formations()->pluck('id');
+            @endphp
+
+
             <!--selected formation-->
             <div class="col">
-                <label for="formation_id" class="form-label">Formations</label>
-                <select class="form-select" id="formation_id" name="formation_id" aria-label="Default select example">
+                <label for="formations" class="form-label">Formations</label>
+                <select class="form-select" id="formations" name="formations[]" multiple aria-label="Default select example">
                     <option selected disabled>Open this select menu</option>
                     @foreach($formations as $formation)
-                    <option @selected(old('formation_id',$enseignant->formation_id)==$formation->id) value="{{$formation->id}}">{{$formation->grade}}</option>
+                    <option @selected($formationsId->contains($formation->id)) value="{{$formation->id}}">{{$formation->grade}}</option>
                     @endforeach
-                    @error("formation_id")
+                    @error("formations")
                     {{$message}}
                     @enderror
                 </select>

@@ -20,6 +20,6 @@ class Formation extends Model
 
     public function enseignants()
     {
-        return $this->hasMany(Enseignant::class);
+        return $this->hasMany(Enseignant::class,'formations_enseignants');
     }
 }

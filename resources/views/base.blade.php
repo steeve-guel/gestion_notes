@@ -74,7 +74,7 @@
                         <div class="collapse" id="enseignants-collapse">
                             <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
                                 <li><a href="{{url('/enseignants/newEnseignant')}}" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Nouveau enseignant</a></li>
-                                <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Tout les enseignants</a></li>
+                                <li><a href="{{url('/enseignants/')}}" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Tout les enseignants</a></li>
                             </ul>
                         </div>
                     </li>

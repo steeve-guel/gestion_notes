@@ -91,6 +91,8 @@ Route::prefix('/etudiants')->controller(EtudiantController::class)->group(functi
 
 Route::prefix('/enseignants')->controller(EnseignantController::class)->group(function () {
 
+    Route::get('/', 'index')->name('admin.enseignant.enseignants');
+
     //route--niveaux
     Route::get('/newEnseignant', 'create')->name('create');
 
