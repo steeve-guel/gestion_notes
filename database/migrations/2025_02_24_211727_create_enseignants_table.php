@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Cours;
 use App\Models\Enseignant;
 use App\Models\Formation;
 use Illuminate\Database\Migrations\Migration;
@@ -29,6 +30,12 @@ return new class extends Migration
             $table->foreignIdFor(Enseignant::class)->constrained()->cascadeOnDelete();
             $table->primary(['formation_id','enseignant_id']);
         });
+
+        Schema::create('cours_enseignants',function(Blueprint $table){
+            $table->foreignIdFor(Cours::class)->nullable()->constrained()->cascadeOnDelete();
+            $table->foreignIdFor(Enseignant::class)->nullable()->constrained()->cascadeOnDelete();
+            $table->primary(['cours_id','enseignant_id']);
+        });
     }
 
     /**
@@ -36,6 +43,7 @@ return new class extends Migration
      */
     public function down(): void
     {
+        Schema::dropIfExists('cours_enseignants');
         Schema::dropIfExists('formations_enseignants');
         Schema::dropIfExists('enseignants');
     }

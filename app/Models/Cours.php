@@ -30,4 +30,9 @@ class Cours extends Model
             'updated_at'
         );
     }
+
+    public function enseignants()
+    {
+        return $this->hasMany(Enseignant::class,'cours_enseignants');
+    }
 }

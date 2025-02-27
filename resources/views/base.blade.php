@@ -56,11 +56,12 @@
                     </li>
                     <li class="mb-1">
                         <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#unite_ens-collapse" aria-expanded="false">
-                            Unite d'enseignements
+                            UE & ECUE
                         </button>
                         <div class="collapse" id="unite_ens-collapse">
                             <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
                                 <li><a href="{{url('/unite_ens/')}}" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Liste des UE</a></li>
+                                <li><a href="{{url('/cours/')}}" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Liste des ECUE</a></li>
                                 <li><a href="{{url('/unite_ens/newUniteEns')}}" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Nouvelle UE</a></li>
                                 <li><a href="{{url('/cours/newCours')}}" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Nouveau ECUE</a></li>
 

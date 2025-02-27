@@ -25,7 +25,7 @@ class UniteEnsController extends Controller
                 ->orderBy('niveau')
                 ->orderBy('semestre')
                 ->orderBy('code')
-                ->paginate(5);
+                ->paginate(5)->appends(['formation_id' => $formationId]);
             // $unites = UniteEns::where('formation_id', $formationId)->get()->paginate(5);
         }
 

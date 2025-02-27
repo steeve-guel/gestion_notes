@@ -6,17 +6,9 @@
     <div class="container">
         <!--first row-->
         <div class="row">
-            <!--code input-->
-            <div class="col">
-                <label for="code" class="form-label">Code</label>
-                <input type="text" class="form-control" id="code" name="code" value="{{$enseignant->code}}" placeholder="EN111111">
-                @error("code")
-                {{$message}}
-                @enderror
-            </div>
-
             @php
             $formationsId = $enseignant->formations()->pluck('id');
+            $coursId = $enseignant->cours()->pluck('id');
             @endphp
 
 
@@ -34,7 +26,32 @@
                 </select>
             </div>
 
+            <!--selected cours-->
+            <div class="col">
+                <label for="cours" class="form-label">Cours</label>
+                <select class="form-select" id="cours" name="cours[]" multiple aria-label="Default select example">
+                    <option selected disabled>Open this select menu</option>
+                    @foreach($cours as $cour)
+                    <option @selected($coursId->contains($cour->id)) value="{{$cour->id}}">{{$cour->intitule}}</option>
+                    @endforeach
+                    @error("cours")
+                    {{$message}}
+                    @enderror
+                </select>
+            </div>
         </div>
+
+        <div class="row">
+            <!--code input-->
+            <div class="col">
+                <label for="code" class="form-label">Code</label>
+                <input type="text" class="form-control" id="code" name="code" value="{{$enseignant->code}}" placeholder="EN111111">
+                @error("code")
+                {{$message}}
+                @enderror
+            </div>
+        </div>
+
         <!--second row-->
         <div class="row">
             <!--nom input-->

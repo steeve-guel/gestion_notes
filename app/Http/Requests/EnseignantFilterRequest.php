@@ -29,7 +29,8 @@ class EnseignantFilterRequest extends FormRequest
             'email' =>['required'],
             'telephone' =>['required'],
             'grade' =>['required'],
-            'formations' => ['array','exists:formations,id', 'required']
+            'formations' => ['array','exists:formations,id', 'required'],
+            'cours' => ['array','exists:cours,id', 'required']
         ];
     }
 }

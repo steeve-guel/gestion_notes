@@ -15,7 +15,11 @@ class CoursController extends Controller
     public function index()
     {
         //
+        $cours = Cours::paginate(5);
 
+        return view('admin.cours.cours',compact(
+            'cours',
+        ));
     }
 
     /**
@@ -71,6 +75,7 @@ class CoursController extends Controller
     public function edit(Cours $cours)
     {
         //
+
     }
 
     /**

@@ -18,7 +18,7 @@ class EnseignantController extends Controller
         //
         $enseignants = Enseignant::paginate(5);
 
-        return view('admin.enseignant.enseignants',compact(
+        return view('admin.enseignant.enseignants', compact(
             'enseignants',
         ));
     }
@@ -30,11 +30,10 @@ class EnseignantController extends Controller
     {
         //
         $enseignant = new Enseignant();
+        $formations = Formation::select('id', 'grade')->get();
+        $cours = Cours::select('id', 'intitule')->get();
 
-        return view('admin.enseignant.createEnseignant', [
-            'enseignant' => $enseignant,
-            'formations' => Formation::select('id', 'grade')->get()
-        ]);
+        return view('admin.enseignant.createEnseignant', compact('enseignant', 'formations', 'cours'));
     }
 
     /**
@@ -55,7 +54,12 @@ class EnseignantController extends Controller
     public function show(Enseignant $enseignant)
     {
         //
-        return view('admin.enseignant.showEnseignant', ['enseignant' => $enseignant]);
+        $formations = collect();
+        $formations = $enseignant->formations;
+        $cours = collect();
+        $cours = $enseignant->cours;
+
+        return view('admin.enseignant.showEnseignant', compact('enseignant', 'formations','cours'));
     }
 
     /**
@@ -66,11 +70,10 @@ class EnseignantController extends Controller
         //
 
         //dd($enseignant->formations()->pluck('id'));
+        $formations = Formation::select('id', 'grade')->get();
+        $cours = Cours::select('id', 'intitule')->get();
 
-        return view('admin.enseignant.editEnseignant', [
-            'enseignant' => $enseignant,
-            'formations' => Formation::select('id', 'grade')->get()
-        ]);
+        return view('admin.enseignant.editEnseignant', compact('enseignant', 'formations', 'cours'));
     }
 
     /**
@@ -82,6 +85,8 @@ class EnseignantController extends Controller
         $enseignant->update($request->validated());
         // dd($request->all());
         $enseignant->formations()->sync($request->validated('formations'));
+        $enseignant->cours()->sync($request->validated('cours'));
+
         return redirect()->route('enseignant.show', ['enseignant' => $enseignant->id])->with('success', "L'article a ete bien enregistre");
     }
 

@@ -19,7 +19,12 @@ class Enseignant extends Model
         'grade'
     ];
 
-    public function formations(){
-        return $this->belongsToMany(Formation::class,'formations_enseignants');
+    public function formations()
+    {
+        return $this->belongsToMany(Formation::class, 'formations_enseignants');
+    }
+    public function cours()
+    {
+        return $this->belongsToMany(Cours::class, 'cours_enseignants');
     }
 }

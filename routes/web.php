@@ -55,6 +55,8 @@ Route::prefix('/unite_ens')->controller(UniteEnsController::class)->group(functi
 
 Route::prefix('/cours')->controller(CoursController::class)->group(function () {
 
+    Route::get('/', 'index')->name('admin.cours.cours');
+
     //route--niveaux
     Route::get('/newCours', 'create')->name('create');
 
@@ -67,8 +69,8 @@ Route::prefix('/cours')->controller(CoursController::class)->group(function () {
 
     )->name('cours.show');
 
-    // Route::get('/{unite_ens}/editUniteEns', 'edit')->name('editUniteEns');
-    // Route::patch('/{unite_ens}/editUniteEns','update');
+    Route::get('/{cours}/editCours', 'edit')->name('editCours');
+    Route::patch('/{cours}/editCours','update');
 });
 
 Route::prefix('/etudiants')->controller(EtudiantController::class)->group(function () {

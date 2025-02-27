@@ -24,7 +24,7 @@
             <td>{{$enseignant->telephone}}</td>
             <td>{{$enseignant->grade}}</td>
             <td>
-                <a href="">voir</a>
+                <a href="{{route('enseignant.show',['enseignant' => $enseignant])}}">voir</a>
                 <a href="{{route('editEnseignant',['enseignant' => $enseignant])}}">éditer</a>
             </td>
         </tr>

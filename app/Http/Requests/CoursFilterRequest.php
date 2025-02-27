@@ -25,7 +25,7 @@ class CoursFilterRequest extends FormRequest
             //
             'code' => ['required'],
             'intitule' => ['required'],
-            'unite_ens_id' => 'required|exists:unite_ens,id',
+            'unite_ens_id' => ['required|exists:unite_ens,id'],
             'coeff' => ['required'],
             'coursMagistral' => ['required'],
             'tDiriges' => ['required'],

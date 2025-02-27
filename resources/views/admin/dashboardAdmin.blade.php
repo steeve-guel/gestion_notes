@@ -11,6 +11,14 @@
             <small>Espace Administrateur</small>
         </section>
 
+        <section class="row mb-5">
+            <div class="col">
+                <span style="letter-spacing: 1px;font-weight:300;"> <strong>UE :</strong> Unité d'Enseignement</span>
+                <span style="letter-spacing: 1px; font-weight:300;">| <strong>ECUE :</strong>  Element Constitutif d'Unité d'Enseignement (cours)</span>
+            </div>
+
+        </section>
+
 
         <div class="container text-center align-item-center">
             <div class="row mb-5">
