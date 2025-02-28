@@ -75,6 +75,8 @@ Route::prefix('/cours')->controller(CoursController::class)->group(function () {
 
 Route::prefix('/etudiants')->controller(EtudiantController::class)->group(function () {
 
+    Route::get('/', 'index')->name('admin.etudiant.etudiants');
+
     //route--niveaux
     Route::get('/newEtudiant', 'create')->name('create');
 

@@ -86,7 +86,7 @@
                         <div class="collapse" id="etudiants-collapse">
                             <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
                                 <li><a href="{{url('/etudiants/newEtudiant')}}" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Nouveau etudiant</a></li>
-                                <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Tout les etudiants</a></li>
+                                <li><a href="{{url('/etudiants/')}}" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Tout les etudiants</a></li>
                             </ul>
                         </div>
                     </li>
