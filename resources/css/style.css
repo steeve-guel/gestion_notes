@@ -7,16 +7,16 @@
     background-color: #F8F8F8;
     width: 100%;
     height: 100vh;
-    background: linear-gradient(#1717172d, #1717173d),
-        url(../../public/images/pexels-olly-3769021.jpg);
+    background: linear-gradient(#171717c2, #171717be),
+        url(../../public/images/pexels-pixabay-289737.jpg);
     background-position: center;
     background-size: cover;
 }
 
 .std-contain {
-    background: #f8f8f8e5 !important;
+    background: #f8f8f8ce !important;
     width: 40%;
-    border-radius: 14px;
+    border-radius: 4px;
     padding-inline: 1%;
     padding-block: 1%;
 }

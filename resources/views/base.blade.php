@@ -107,11 +107,31 @@
                             Account
                         </button>
                         <div class="collapse" id="account-collapse">
+
                             <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                                <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">New...</a></li>
-                                <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Profile</a></li>
-                                <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Settings</a></li>
-                                <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Sign out</a></li>
+                                <li>
+                                    <a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">
+                                        @auth
+                                        Utilisateur : {{Auth::user()->name}}
+                                        @endauth
+                                    </a>
+                                </li>
+                                <li>
+
+                                    @auth
+                                    <form action="{{route('auth.logout')}}" method="post" class="d-flex nav-item" role="search">
+                                        @method("delete")
+                                        @csrf
+                                        <input type="hidden" name="action" value="submit">
+                                        <a href="#" style="text-decoration: none;
+                                         padding: 5px 10px; background-color: #007bff;
+                                          color: white; border-radius: 5px;"
+                                            onclick="this.closest('form').submit(); return false;">Se deconnecter</a>
+                                    </form>
+                                    @endauth
+
+
+                                </li>
                             </ul>
                         </div>
                     </li>

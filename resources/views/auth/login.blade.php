@@ -14,8 +14,10 @@
 
             <div class="jumbotron position-absolute top-50 start-50 translate-middle std-contain">
                 <div class="text-center mb-5">
+                    <img src="{{ asset('images/laptop-student-svgrepo-com.svg') }}" alt="" srcset="">
                     <h1 class="std-log-l1">Connexion</h1>
                     <small>Bienvenue dans l'espace de connexion de MyStudentBF</small>
+
                 </div>
 
                 <form action="" class="vstack gap-3" method="post">
