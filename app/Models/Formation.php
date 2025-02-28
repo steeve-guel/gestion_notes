@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Formation extends Model
@@ -18,12 +19,12 @@ class Formation extends Model
         return $this->hasMany(UniteEns::class);
     }
 
-    public function enseignants()
+    public function enseignants():BelongsToMany
     {
-        return $this->hasMany(Enseignant::class,'formations_enseignants');
+        return $this->belongsToMany(Enseignant::class,'formations_enseignants');
     }
 
-    public function etudiants()
+    public function etudiants():HasMany
     {
         return $this->hasMany(Etudiant::class);
     }

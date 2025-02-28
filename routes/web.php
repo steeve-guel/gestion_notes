@@ -5,6 +5,7 @@ use App\Http\Controllers\EnseignantController;
 use App\Http\Controllers\EtudiantController;
 use App\Http\Controllers\FormationController;
 use App\Http\Controllers\NiveauController;
+use App\Http\Controllers\NoteController;
 use App\Http\Controllers\UniteEnsController;
 use Illuminate\Support\Facades\Route;
 
@@ -113,6 +114,26 @@ Route::prefix('/enseignants')->controller(EnseignantController::class)->group(fu
     Route::patch('/{enseignant}/editEnseignant', 'update');
 });
 
+Route::prefix('/notes')->controller(NoteController::class)->group(function () {
+
+    Route::get('/', 'index')->name('pub.notes.notes');
+
+    //route--niveaux
+    Route::get('/newNote', 'create')->name('create')->name('notes.create');
+
+    Route::post('/newNote', 'store');
+
+    Route::get('/{note}', 'show')->where(
+        [
+            'id' => '[0-9]+'
+        ]
+
+    )->name('note.show');
+
+    Route::get('/{note}/editNote', 'edit')->name('editNote');
+    Route::patch('/{note}/editNote', 'update');
+});
+
 //php artisan migrate:fresh
 
 
@@ -139,3 +160,7 @@ Route::prefix('/enseignants')->controller(EnseignantController::class)->group(fu
 //php artisan make:model Enseignant -m
 //php artisan make:controller EnseignantController --resource --model=Enseignant
 //php artisan make:request EnseignantFilterRequest
+
+//php artisan make:model Note -m
+//php artisan make:controller NoteController --resource --model=Note
+//php artisan make:request NoteFilterRequest

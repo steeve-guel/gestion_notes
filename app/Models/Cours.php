@@ -35,4 +35,9 @@ class Cours extends Model
     {
         return $this->hasMany(Enseignant::class,'cours_enseignants');
     }
+
+    public function notes()
+    {
+        return $this->hasMany(Note::class);
+    }
 }
