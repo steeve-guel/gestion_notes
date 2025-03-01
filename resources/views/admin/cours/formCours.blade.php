@@ -1,4 +1,3 @@
-
 <form action="" method="post">
     @csrf
     @method($cours->id? "PATCH":"POST")
@@ -23,10 +22,11 @@
                     @foreach($unites as $unite)
                     <option value="{{$unite->id}}">{{$unite->intitule}}</option>
                     @endforeach
-                    @error("unite_ens_id")
-                    {{$message}}
-                    @enderror
+
                 </select>
+                @error("unite_ens_id")
+                {{$message}}
+                @enderror
             </div>
 
         </div>
@@ -56,13 +56,18 @@
             <div class="col">
                 <label for="coursMagistral" class="form-label">CM</label>
                 <input type="number" class="form-control" id="coursMagistral" name="coursMagistral" value="" placeholder="MASTER SYSTEMES D'INFORMATION (SI)">
-
+                @error("coursMagistral")
+                {{$message}}
+                @enderror
             </div>
 
             <!--semestre input-->
             <div class="col">
                 <label for="tDiriges" class="form-label">TD</label>
                 <input type="number" class="form-control" id="tDiriges" name="tDiriges" value="" placeholder="MASTER SYSTEMES D'INFORMATION (SI)">
+                @error("tDiriges")
+                {{$message}}
+                @enderror
             </div>
         </div>
         <div class="row">
@@ -70,13 +75,18 @@
             <div class="col">
                 <label for="tPratiques" class="form-label">TP</label>
                 <input type="number" class="form-control" id="tPratiques" name="tPratiques" value="" placeholder="MASTER SYSTEMES D'INFORMATION (SI)">
-
+                @error("tPratiques")
+                {{$message}}
+                @enderror
             </div>
 
             <!--semestre input-->
             <div class="col">
                 <label for="tPersEtudiant" class="form-label">TPE</label>
                 <input type="number" class="form-control" id="tPersEtudiant" name="tPersEtudiant" value="" placeholder="MASTER SYSTEMES D'INFORMATION (SI)">
+                @error("tPersEtudiant")
+                {{$message}}
+                @enderror
             </div>
         </div>
         <div class="row">
@@ -84,7 +94,9 @@
             <div class="col">
                 <label for="volmHoraireTPers" class="form-label">VHTP</label>
                 <input type="number" class="form-control" id="volmHoraireTPers" name="volmHoraireTPers" value="" placeholder="MASTER SYSTEMES D'INFORMATION (SI)">
-
+                @error("volmHoraireTPers")
+                {{$message}}
+                @enderror
             </div>
 
         </div>

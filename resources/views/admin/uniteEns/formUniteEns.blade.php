@@ -35,7 +35,7 @@
             <div class="col">
                 <label for="intitule" class="form-label">Intitule</label>
                 <input type="text" class="form-control" id="intitule" name="intitule" value="{{$unite_ens->intitule}}" placeholder="Interopérabilité et coopération">
-                @error("mention")
+                @error("intitule")
                 {{$message}}
                 @enderror
             </div>

@@ -10,7 +10,9 @@ use App\Http\Controllers\NoteController;
 use App\Http\Controllers\UniteEnsController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', [FormationController::class, 'index']);
+Route::get('/', function(){
+    return redirect()->route('admin.dashboardAdmin');
+});
 
 Route::get('/login',[AuthController::class,'login'])->name('auth.login');
 Route::delete('/logout',[AuthController::class,'logout'])->name('auth.logout');
